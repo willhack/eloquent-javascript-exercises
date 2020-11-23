@@ -1,0 +1,25 @@
+{
+  "name": "eloquent-javascript-exercises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "4-data-structures.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willhack/eloquent-javascript-exercises.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willhack/eloquent-javascript-exercises/issues"
+  },
+  "homepage": "https://github.com/willhack/eloquent-javascript-exercises#readme",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
