@@ -88,8 +88,7 @@ function arrToList(arr) {
 
   arr.forEach((el, i) => {
     cur.value = el;
-    if (i === arr.length - 1) cur.next = null;
-    else {
+    if (i !== arr.length - 1) {
       cur.next = { value: null, next: null };
       cur = cur.next;
     }
@@ -98,6 +97,7 @@ function arrToList(arr) {
   return list;
 }
 const myList = arrToList([1, 2]);
+console.log(myList);
 
 // FUNCTION LIST TO ARRAY
 /**
