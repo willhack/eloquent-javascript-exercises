@@ -11,7 +11,6 @@
  * and returns an array containing all the numbers from start up
  * to (and including) end.
  *
- *
  * EXTENSION, Take an optional third argument that indicates the “step” value
  * used when building the array. If no step is given, the elements go up by
  * increments of one. The function call range(1, 10, 2) should
@@ -40,7 +39,6 @@ function range(start, end, step = 1) {
  * Function sum takes an array of numbers and returns the sum of these
  * numbers. Run the example program and see whether it does indeed return 55.
  */
-
 const sum = (nums) => nums.reduce((a, b) => a + b);
 
 // FUNCTION REVERSE ARRAY
@@ -48,10 +46,10 @@ const sum = (nums) => nums.reduce((a, b) => a + b);
  * @param {Array} arr
  * @returns {Array}
  *
- * “reverseArray, takes an array as argument and produces a new
- *  array that has the same elements in the inverse order”
+ * reverseArray, takes an array as argument and produces a new
+ * array that has the same elements in the inverse order”
  */
-function reverse(arr) {
+function reverseArray(arr) {
   const result = [];
   // Using decremental iteration for reduced time complexity over .unshift
   for (let i = arr.length - 1; i > -1; i--) {
@@ -65,7 +63,7 @@ function reverse(arr) {
  * @param {Array} arr
  * @returns {Array}
  *
- * “reverseArrayInPlace, does what the reverse method does:
+ * reverseArrayInPlace, does what the reverse method does:
  * it modifies the array given as argument by reversing its elements.
  */
 function reverseInPlace(arr) {
@@ -80,9 +78,9 @@ function reverseInPlace(arr) {
  * @param {Array} arr
  * @returns {object}
  *
- * “arrayToList that builds up a list structure when given [1, 2, 3] as argument”
+ * arrayToList builds up a list structure when given [1, 2, 3] as argument
  */
-function arrToList(arr) {
+function arrayToList(arr) {
   const list = { value: null, next: null };
   let cur = list;
 
@@ -96,32 +94,68 @@ function arrToList(arr) {
 
   return list;
 }
-const myList = arrToList([1, 2]);
-console.log(myList);
 
 // FUNCTION LIST TO ARRAY
 /**
  * @param {object} list
- * @param {Array} [arr]
  * @returns {Array}
  *
- * Produces an array from a list. Then add a helper function prepend,
- * which takes an element and a list and creates a new list that adds the
- * element to the front of the input list, and nth, which takes a list and
- * a number and returns the element at the given position in the list
- * (with zero referring to the first element) or undefined when there
- * is no such element.
+ * Produce an array from a list.
  */
-function listToArr(list, arr = []) {
+function listToArray(list, arr = []) {
   if (!list.value) return arr;
   arr.push(list.value);
-  return listToArr(list.next, arr);
+  return listToArray(list.next, arr);
 }
 
-const prependToList = (list, value) => ({ value, next: list });
+// FUNCTION PREPEND TO LIST
+/**
+ * @param {*} element
+ * @param {object} list
+ * @returns {object}
+ *
+ * Prepend takes an element and a list and creates a new list
+ * that adds the element to the front of the input list.
+ *
+ */
+const prepend = (list, value) => ({ value, next: list });
 
+// FUNCTION NTH
+/**
+ * @param {object} list
+ * @param {number} num
+ * @returns {object | undefined}
+ *
+ * Takes a list and a number and returns the element (list) at the given
+ * position in the list (with zero referring to the first element) or
+ * undefined when there is no such element.
+ */
 function nth(list, num) {
-  if (!num) return list.value;
+  if (!num) return list;
   if (!list.next) return undefined;
   return nth(list.next, num - 1);
 }
+
+// DEEP COMPARISON
+/**
+ * @param {*} valueOne
+ * @param {*} valueTwo
+ * @returns {boolean}
+ * “Write a function deepEqual that takes two values and returns true only if they
+ * are the same value or are objects with the same properties, where the values of
+ * the properties are equal when compared with a recursive call to deepEqual.
+ *
+ * To find out whether values should be compared directly (use the === operator for that)
+ * or have their properties compared, you can use the typeof operator. If it produces
+ * "object" for both values, you should do a deep comparison. But you have to take
+ * one silly exception into account: because of a historical accident, typeof null
+ * also produces "object".”
+ */
+function deepComparison(valueOne, valueTwo) {
+
+}
+
+// Exports for testing
+module.exports = {
+  range, sum, reverseArray, reverseInPlace, arrayToList, listToArray, prepend, nth, deepComparison,
+};
