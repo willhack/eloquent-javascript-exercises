@@ -93,6 +93,20 @@ function prepend(element, list) {
 
 }
 
+// FUNCTION NTH
+/**
+ * @param {object} list
+ * @param {number} num
+ * @returns {object | undefined}
+ *
+ * Takes a list and a number and returns the element (list) at the given
+ * position in the list (with zero referring to the first element) or
+ * undefined when there is no such element.
+ */
+function nth(list, num) {
+
+}
+
 // DEEP COMPARISON
 /**
  * @param {*} valueOne
@@ -114,5 +128,5 @@ function deepComparison(valueOne, valueTwo) {
 
 // Exports for testing
 module.exports = {
-  range, sum, reverseArray, reverseInPlace, arrayToList, listToArray, prepend, deepComparison,
+  range, sum, reverseArray, reverseInPlace, arrayToList, listToArray, prepend, nth, deepComparison,
 };
