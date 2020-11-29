@@ -122,11 +122,11 @@ function nth(list, num) {
  * one silly exception into account: because of a historical accident, typeof null
  * also produces "object".”
  */
-function deepComparison(valueOne, valueTwo) {
+function deepEqual(valueOne, valueTwo) {
 
 }
 
 // Exports for testing
 module.exports = {
-  range, sum, reverseArray, reverseInPlace, arrayToList, listToArray, prepend, nth, deepComparison,
+  range, sum, reverseArray, reverseInPlace, arrayToList, listToArray, prepend, nth, deepEqual,
 };
