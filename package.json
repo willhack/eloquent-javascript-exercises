@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "4-data-structures.js",
+  "jest": {
+    "testEnvironment": "node"
+  },
   "scripts": {
     "test": "jest"
   },

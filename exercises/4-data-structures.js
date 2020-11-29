@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 // CHAPTER 4: DATA STRUCTRUES
 
 // FUNCTION RANGE
@@ -79,6 +80,7 @@ function reverseInPlace(arr) {
  * @returns {object}
  *
  * arrayToList builds up a list structure when given [1, 2, 3] as argument
+ * Note: For the tests a list node has two keys, 'value' and 'next' { value, next }
  */
 function arrayToList(arr) {
   const list = { value: null, next: null };
@@ -103,15 +105,14 @@ function arrayToList(arr) {
  * Produce an array from a list.
  */
 function listToArray(list, arr = []) {
-  if (!list.value) return arr;
-  arr.push(list.value);
-  return listToArray(list.next, arr);
+  if (!list) return arr;
+  return listToArray(list.next, [...arr, list.value]);
 }
 
 // FUNCTION PREPEND TO LIST
 /**
- * @param {*} element
  * @param {object} list
+ * @param {*} element
  * @returns {object}
  *
  * Prepend takes an element and a list and creates a new list
@@ -138,24 +139,31 @@ function nth(list, num) {
 
 // DEEP COMPARISON
 /**
- * @param {*} valueOne
- * @param {*} valueTwo
+ * @param {*} argOne
+ * @param {*} argTwo
  * @returns {boolean}
  * “Write a function deepEqual that takes two values and returns true only if they
  * are the same value or are objects with the same properties, where the values of
  * the properties are equal when compared with a recursive call to deepEqual.
  *
- * To find out whether values should be compared directly (use the === operator for that)
- * or have their properties compared, you can use the typeof operator. If it produces
- * "object" for both values, you should do a deep comparison. But you have to take
- * one silly exception into account: because of a historical accident, typeof null
- * also produces "object".”
+ * Values tested are: numbers, string, boolean, undefined, null, and object literals.
+ * Don't worry about other primatives like Symbol, Nan, Big Int, or other object types (like Arrays)
  */
-function deepComparison(valueOne, valueTwo) {
-
+function deepEqual(arg, arg2) {
+  if (typeof arg !== typeof arg2) return false;
+  if (arg === null && arg2 !== null) return false;
+  if (arg === null && arg2 === null) return true;
+  if (typeof arg === 'object') {
+    if (Object.keys(arg).length !== Object.keys(arg2).length) return false;
+    for (const k in arg) {
+      if (!deepEqual(arg[k], arg2[k])) return false;
+    }
+  }
+  if (arg !== arg2) return false;
+  return true;
 }
 
 // Exports for testing
 module.exports = {
-  range, sum, reverseArray, reverseInPlace, arrayToList, listToArray, prepend, nth, deepComparison,
+  range, sum, reverseArray, reverseInPlace, arrayToList, listToArray, prepend, nth, deepEqual,
 };
