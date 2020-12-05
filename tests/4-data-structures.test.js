@@ -26,7 +26,7 @@ describe('Array functions', () => {
   });
 
   describe('Function sum', () => {
-    test('Adds', () => {
+    test('Adds all array values together', () => {
       expect(sum(arr)).toBe(15);
     });
   });
@@ -41,7 +41,7 @@ describe('Array functions', () => {
     test('Reverses an array', () => {
       expect(reverseInPlace(arr)).toStrictEqual([5, 4, 3, 2, 1]);
     });
-    test('Does in place', () => {
+    test('Does so in place', () => {
       const newArr = reverseInPlace(arr);
       expect(newArr).toBe(arr);
     });
@@ -72,6 +72,7 @@ describe('List functions', () => {
   });
 
   describe('Function prepend', () => {
+    const listA = { value: 1, next: { value: 2, next: null } };
     beforeAll(() => {
       listB = prepend(list, 0);
       listC = { value: 0, next: { value: 1, next: { value: 2, next: null } } };
@@ -79,8 +80,11 @@ describe('List functions', () => {
     test('Adds new node to the front of the list', () => {
       expect(listB).toEqual(listC);
     });
-    test('Does not modify original list', () => {
+    test('Returns a new list', () => {
       expect(list).not.toBe(listB);
+    });
+    test('Does not modify original list', () => {
+      expect(list).toStrictEqual(listA);
     });
   });
 
