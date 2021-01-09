@@ -90,10 +90,10 @@ describe('List functions', () => {
 
   describe('Function nth', () => {
     test('Is zero indexed', () => {
-      expect(nth(list, 0)).toStrictEqual({ value: 1, next: { value: 2, next: null } });
+      expect(nth(list, 0)).toBe(1);
     });
     test('Works for non zero positions', () => {
-      expect(nth(list, 1)).toStrictEqual({ value: 2, next: null });
+      expect(nth(list, 1)).toBe(2);
     });
     test('Returns undefined for numbers outside of range', () => {
       expect(nth(list, 2)).toBe(undefined);

@@ -1,5 +1,5 @@
 # Eloquent JavaScript exercises
-Welcome! This repo serves as a collection of the Eloquent JavaScript exercises ending each chapter.
+Welcome! This repo serves as a collection of the [Eloquent JavaScript](https://eloquentjavascript.net/) exercises ending each chapter. If you enjoy Eloquent JavaScript as much as I do please consider supporting the author directly by purchasing a paperback copy! 
 
 **Note:** Currently only chapter 4 - *Data Structures: Objects and Arrays* has been written. As I continue reading the book I will add exercises and companion tests accordingly.
 

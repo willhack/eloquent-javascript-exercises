@@ -1,6 +1,8 @@
 /* eslint-disable no-restricted-syntax */
 // CHAPTER 4: DATA STRUCTRUES
 
+/* ----- ARRAY FUNCTIONS ----- */
+
 // FUNCTION RANGE
 /**
  * @param {number} start
@@ -74,6 +76,10 @@ function reverseInPlace(arr) {
   return arr;
 }
 
+/* ----- LIST FUNCTIONS ----- */
+// NOTE: For the sake of the jest tests a list node has the key 'next' instead of 'rest'
+//   i.e.  --> { value: 1, next: null },  NOT { value: 1, rest: null }
+
 // FUNCTION ARRAY TO LIST
 /**
  * @param {Array} arr
@@ -125,9 +131,9 @@ const prepend = (list, value) => ({ value, next: list });
 /**
  * @param {object} list
  * @param {number} num
- * @returns {object | undefined}
+ * @returns {* | undefined}
  *
- * Takes a list and a number and returns the element (list) at the given
+ * Takes a list and a number and returns the value at the given
  * position in the list (with zero referring to the first element) or
  * undefined when there is no such element.
  */
