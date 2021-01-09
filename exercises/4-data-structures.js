@@ -138,7 +138,7 @@ const prepend = (list, value) => ({ value, next: list });
  * undefined when there is no such element.
  */
 function nth(list, num) {
-  if (!num) return list;
+  if (!num) return list.value;
   if (!list.next) return undefined;
   return nth(list.next, num - 1);
 }
