@@ -12,10 +12,10 @@ xdescribe('Chapter 2 Tests', () => {
     beforeEach(() => {
       triangle();
     });
-    test('should make seven calls to console.log', () => {
+    test('Should make seven calls to console.log', () => {
       expect(spy.mock.calls.length).toBe(7);
     });
-    test('should correct form the triangle', () => {
+    test('Should correct form the triangle', () => {
       expect(spy.mock.calls.join('\n')).toBe('#\n##\n###\n####\n#####\n######\n#######');
     });
   });
@@ -33,7 +33,7 @@ xdescribe('Chapter 2 Tests', () => {
     beforeEach(() => {
       fizzBuzz();
     });
-    test('should make 100 calls to console.log', () => {
+    test('Should make 100 calls to console.log', () => {
       expect(spy.mock.calls.length).toBe(100);
     });
     test("Should console.log 'Fizz', 'Buzz', or the number when appropriate", () => {
@@ -55,7 +55,7 @@ xdescribe('Chapter 2 Tests', () => {
     beforeEach(() => {
       fizzBuzzExtension();
     });
-    test('should make 100 calls to console.log', () => {
+    test('Should make 100 calls to console.log', () => {
       expect(spy.mock.calls.length).toBe(100);
     });
     test("Should console.log 'Fizz', 'Buzz', 'FizzBuzz', or the number when appropriate", () => {
