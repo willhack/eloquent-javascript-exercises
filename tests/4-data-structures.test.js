@@ -123,7 +123,7 @@ describe('Function deepEqual', () => {
     [null, undefined],
     [{ a: null }, { a: 1 }],
     [{ a: { b: 1 } }, { a: { b: 2 } }],
-  ])('Returns false for inequal arguments:', (valueOne, valueTwo) => {
+  ])('Returns false for unequal arguments:', (valueOne, valueTwo) => {
     test(`deepEqual(${JSON.stringify(valueOne)}, ${JSON.stringify(valueTwo)})`, () => {
       expect(deepEqual(valueOne, valueTwo)).toBe(false);
     });

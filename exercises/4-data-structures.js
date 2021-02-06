@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax */
-// CHAPTER 4: DATA STRUCTRUES
+// CHAPTER 4: DATA STRUCTURES
 
 /* ----- ARRAY FUNCTIONS ----- */
 
@@ -152,8 +152,6 @@ function nth(list, num) {
  * are the same value or are objects with the same properties, where the values of
  * the properties are equal when compared with a recursive call to deepEqual.
  *
- * Values tested are: numbers, string, boolean, undefined, null, and object literals.
- * Don't worry about other primatives like Symbol, Nan, Big Int, or other object types (like Arrays)
  */
 function deepEqual(arg, arg2) {
   if (typeof arg !== typeof arg2) return false;
