@@ -74,9 +74,17 @@ xdescribe('Chapter 2 Tests', () => {
     test('Should accurately create an 8x8 chessboard', () => {
       const actual = spy.mock.calls[0][0];
       try {
-        expect(actual).toBe(expectedA);
-      } catch (e) {
-        expect(actual).toBe(expectedB);
+        expect(actual).toBe(`${expectedA}\n`);
+      } catch (error) {
+        try {
+          expect(actual).toBe(expectedA);
+        } catch (err) {
+          try {
+            expect(actual).toBe(`${expectedB}\n`);
+          } catch (e) {
+            expect(actual).toBe(expectedB);
+          }
+        }
       }
     });
   });

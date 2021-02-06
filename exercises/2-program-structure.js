@@ -15,7 +15,9 @@
 
 */
 function triangle() {
-  // YOUR CODE HERE
+  for (let i = 1; i < 8; i++) {
+    console.log('#'.repeat(i));
+  }
 }
 
 // FUNCTION FIZZBUZZ
@@ -32,7 +34,11 @@ function triangle() {
     ...
 */
 function fizzBuzz() {
-  // YOUR CODE HERE
+  for (let i = 1; i < 101; i++) {
+    if (i % 3 === 0) console.log('Fizz');
+    else if (i % 5 === 0) console.log('Buzz');
+    else console.log(i);
+  }
 }
 
 // FUNCTION FIZZBUZZ: EXTENSION
@@ -51,7 +57,12 @@ function fizzBuzz() {
     ...
 */
 function fizzBuzzExtension() {
-  // YOUR CODE HERE
+  for (let i = 1; i < 101; i++) {
+    if (i % 15 === 0) console.log('FizzBuzz');
+    else if (i % 3 === 0) console.log('Fizz');
+    else if (i % 5 === 0) console.log('Buzz');
+    else console.log(i);
+  }
 }
 
 // FUNCTION CHESSBOARD
@@ -72,7 +83,14 @@ function fizzBuzzExtension() {
 
 */
 function chessboard() {
-  // YOUR CODE HERE
+  let board = '';
+  for (let i = 0; i < 8; i++) {
+    for (let j = 0; j < 8; j++) {
+      board += ((i + j) % 2) ? ' ' : '#';
+    }
+    board += '\n';
+  }
+  console.log(board);
 }
 
 // FUNCTION CHESSBOARD: EXTENSION

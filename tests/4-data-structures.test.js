@@ -8,7 +8,7 @@ let listB;
 let listC;
 
 xdescribe('Chapter 4 Tests', () => {
-  xdescribe('Array functions', () => {
+  describe('Array functions', () => {
     beforeEach(() => { arr = [1, 2, 3, 4, 5]; });
 
     describe('Function range', () => {
@@ -49,7 +49,7 @@ xdescribe('Chapter 4 Tests', () => {
     });
   });
 
-  xdescribe('List functions', () => {
+  describe('List functions', () => {
     beforeEach(() => {
       list = {
         value: 1,
@@ -102,7 +102,7 @@ xdescribe('Chapter 4 Tests', () => {
     });
   });
 
-  xdescribe('Function deepEqual', () => {
+  describe('Function deepEqual', () => {
     beforeAll(() => {
       list = { value: 0, next: { value: 1, next: { value: 2, next: null } } };
       listB = { value: 0, next: { value: 1, next: { value: 2, next: null } } };
