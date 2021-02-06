@@ -2,13 +2,13 @@ const {
   triangle, fizzBuzz, fizzBuzzExtension, chessboard, chessboardExtension,
 } = require('../exercises/2-program-structure');
 
-xdescribe('Chapter 2 Tests', () => {
+describe('Chapter 2 Tests', () => {
   const spy = jest.spyOn(console, 'log');
   beforeEach(() => {
     spy.mockReset();
   });
 
-  xdescribe('Looping a Triangle', () => {
+  describe('Looping a Triangle', () => {
     beforeEach(() => {
       triangle();
     });
@@ -19,7 +19,7 @@ xdescribe('Chapter 2 Tests', () => {
       expect(spy.mock.calls.join('\n')).toBe('#\n##\n###\n####\n#####\n######\n#######');
     });
   });
-  xdescribe('FizzBuzz', () => {
+  describe('FizzBuzz', () => {
     const expected = (() => {
       const res = [];
       for (let i = 1; i < 101; i++) {
@@ -40,7 +40,7 @@ xdescribe('Chapter 2 Tests', () => {
       expect(spy.mock.calls.join('\n')).toBe(expected);
     });
   });
-  xdescribe('FizzBuzz Extension', () => {
+  describe('FizzBuzz Extension', () => {
     const expected = (() => {
       const res = [];
       for (let i = 1; i < 101; i++) {
@@ -62,7 +62,7 @@ xdescribe('Chapter 2 Tests', () => {
       expect(spy.mock.calls.join('\n')).toBe(expected);
     });
   });
-  xdescribe('Chessboard', () => {
+  describe('Chessboard', () => {
     const expectedA = new Array(4).fill(' # # # #\n# # # # ').join('\n');
     const expectedB = new Array(4).fill('# # # # \n # # # #').join('\n');
     beforeEach(() => {
@@ -88,7 +88,7 @@ xdescribe('Chapter 2 Tests', () => {
       }
     });
   });
-  xdescribe('Chessboard Extension', () => {
+  describe('Chessboard Extension', () => {
     test('Should work for small boards', () => {
       chessboardExtension(1);
       const actual = spy.mock.calls[0][0];
