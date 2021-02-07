@@ -1,6 +1,6 @@
 // CHAPTER 2: PROGRAM STRUCTURE
 
-// FUNCTION TRIANGLE
+// LOOPING A TRIANGLE
 /*
   Write a loop that makes seven calls to console.log
   to output the following triangle:
@@ -20,7 +20,7 @@ function triangle() {
   }
 }
 
-// FUNCTION FIZZBUZZ
+// FIZZBUZZ
 /*
   Write a program that uses console.log to print all the numbers from
   1 to 100, with two exceptions. For numbers divisible by 3, print "Fizz"
@@ -41,7 +41,7 @@ function fizzBuzz() {
   }
 }
 
-// FUNCTION FIZZBUZZ: EXTENSION
+// FIZZBUZZ: EXTENSION
 /*
   The same as above but...
   For numbers divisible by both 3 and 5 print "FizzBuzz" instead.
@@ -65,7 +65,7 @@ function fizzBuzzExtension() {
   }
 }
 
-// FUNCTION CHESSBOARD
+// CHESSBOARD
 /*
   Write a program that creates a string that represents an 8x8 grid,
   using new-line characters to separate lines. At each position of the grid
@@ -93,7 +93,7 @@ function chessboard() {
   console.log(board);
 }
 
-// FUNCTION CHESSBOARD: EXTENSION
+// CHESSBOARD: EXTENSION
 /*
  Modify your above chessboard function to define a binding `size = 8` and
  change the program so that it works for any size, outputting a grid
@@ -115,6 +115,7 @@ function chessboardExtension(size) {
   console.log(board);
 }
 
+// Exports for testing
 module.exports = {
   triangle, fizzBuzz, fizzBuzzExtension, chessboard, chessboardExtension,
 };

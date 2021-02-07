@@ -3,7 +3,7 @@
 
 /* ----- ARRAY FUNCTIONS ----- */
 
-// FUNCTION RANGE
+// RANGE
 /**
  * @param {number} start
  * @param {number} end
@@ -14,7 +14,7 @@
  * and returns an array containing all the numbers from start up
  * to (and including) end.
  *
- * EXTENSION, Take an optional third argument that indicates the “step” value
+ * EXTENSION: Take an optional third argument that indicates the “step” value
  * used when building the array. If no step is given, the elements go up by
  * increments of one. The function call range(1, 10, 2) should
  * return [1, 3, 5, 7, 9]. Make sure it also works with negative step values
@@ -34,7 +34,7 @@ function range(start, end, step = 1) {
   return result;
 }
 
-// FUNCTION SUM
+// SUM
 /**
  * @param {number[]} nums
  * @returns {number}
@@ -44,7 +44,7 @@ function range(start, end, step = 1) {
  */
 const sum = (nums) => nums.reduce((a, b) => a + b);
 
-// FUNCTION REVERSE ARRAY
+// REVERSE ARRAY
 /**
  * @param {Array} arr
  * @returns {Array}
@@ -61,7 +61,7 @@ function reverseArray(arr) {
   return result;
 }
 
-// FUNCTION REVERSE ARRAY IN PLACE
+// REVERSE ARRAY IN PLACE
 /**
  * @param {Array} arr
  * @returns {Array}
@@ -80,7 +80,7 @@ function reverseInPlace(arr) {
 // NOTE: For the sake of the jest tests a list node has the key 'next' instead of 'rest'
 //   i.e.  --> { value: 1, next: null },  NOT { value: 1, rest: null }
 
-// FUNCTION ARRAY TO LIST
+// ARRAY TO LIST
 /**
  * @param {Array} arr
  * @returns {object}
@@ -103,7 +103,7 @@ function arrayToList(arr) {
   return list;
 }
 
-// FUNCTION LIST TO ARRAY
+// LIST TO ARRAY
 /**
  * @param {object} list
  * @returns {Array}
@@ -115,7 +115,7 @@ function listToArray(list, arr = []) {
   return listToArray(list.next, [...arr, list.value]);
 }
 
-// FUNCTION PREPEND TO LIST
+// PREPEND TO LIST
 /**
  * @param {object} list
  * @param {*} element
@@ -127,7 +127,7 @@ function listToArray(list, arr = []) {
  */
 const prepend = (list, value) => ({ value, next: list });
 
-// FUNCTION NTH
+// NTH VALUE
 /**
  * @param {object} list
  * @param {number} num
@@ -148,10 +148,15 @@ function nth(list, num) {
  * @param {*} argOne
  * @param {*} argTwo
  * @returns {boolean}
- * “Write a function deepEqual that takes two values and returns true only if they
+ * Write a function deepEqual that takes two values and returns true only if they
  * are the same value or are objects with the same properties, where the values of
  * the properties are equal when compared with a recursive call to deepEqual.
  *
+ * To find out whether values should be compared directly (use the === operator for that)
+ * or have their properties compared, you can use the typeof operator. If it produces
+ * "object" for both values, you should do a deep comparison. But you have to take
+ * one silly exception into account: because of a historical accident, typeof null
+ * also produces "object".
  */
 function deepEqual(arg, arg2) {
   if (typeof arg !== typeof arg2) return false;

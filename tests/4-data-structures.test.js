@@ -1,6 +1,6 @@
 const {
   range, sum, reverseArray, reverseInPlace, arrayToList, listToArray, prepend, nth, deepEqual,
-} = require('../exercises/4-data-structures.js');
+} = require('../exercises/4-data-structures');
 
 let arr;
 let list;
