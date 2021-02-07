@@ -11,6 +11,7 @@
     "no-unused-vars": ["off", { "vars": "local" }],
     "no-plusplus":"off",
     "no-console":"off",
-    "no-param-reassign":"off"
+    "no-param-reassign":"off",
+    "no-use-before-define":"off"
   }
 }

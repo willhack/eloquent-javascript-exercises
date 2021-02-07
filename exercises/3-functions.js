@@ -22,9 +22,9 @@ function min(a, b) {
  * parameter (a positive, whole number) and return a Boolean whether
  * or not the value passed in is an even number.
  *
- * EXTENSION: Remove the 'x' on line <TODO LINE #> to see what happens when
- * negative whole numbers are passed in. Can you think of a way to fix this
- * so that your function works for all integer values?
+ * EXTENSION: Remove the 'x' on line 18 of tests/3-functions.test.js to see
+ * what happens when negative whole numbers are passed in. Can you think
+ * of a way to fix this so that your function works for all integer values?
  */
 function isEven(n) {
   // YOUR CODE HERE
