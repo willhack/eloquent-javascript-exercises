@@ -9,9 +9,7 @@
  * Write a function min that takes two arguments
  * (a and b) and returns the minimum value.
  */
-function min(a, b) {
-  // YOUR CODE HERE
-}
+const min = (a, b) => ((a < b) ? a : b);
 
 // RECURSION
 /**
@@ -27,7 +25,9 @@ function min(a, b) {
  * of a way to fix this so that your function works for all integer values?
  */
 function isEven(n) {
-  // YOUR CODE HERE
+  if (n === 0) return true;
+  if (n === 1) return false;
+  return (n > 0) ? isEven(n - 2) : isEven(n + 2);
 }
 
 // BEAN COUNTING
@@ -42,9 +42,7 @@ function isEven(n) {
  * EXTENSION: Once you have finished countChar,
  * rewrite countBs to make use of this new function.
  */
-function countBs(str) {
-  // YOUR CODE HERE
-}
+const countBs = (str) => countChar(str, 'B');
 
 /**
  * @param {string} str - The string to be searched
@@ -55,7 +53,11 @@ function countBs(str) {
  * be counted (rather than counting only uppercase "B" characters).
  */
 function countChar(str, char) {
-  // YOUR CODE HERE
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === char) count++;
+  }
+  return count;
 }
 
 // Exports for testing

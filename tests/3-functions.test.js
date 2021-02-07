@@ -2,25 +2,25 @@ const {
   min, isEven, countBs, countChar,
 } = require('../exercises/3-functions');
 
-xdescribe('Chapter 3 Tests', () => {
-  xdescribe('Minimum', () => {
+describe('Chapter 3 Tests', () => {
+  describe('Minimum', () => {
     test('Should return the smaller of two numbers', () => {
       expect(min(0, 1)).toBe(0);
       expect(min(1, 0)).toBe(0);
       expect(min(-100, 1000)).toBe(-100);
     });
   });
-  xdescribe('Function isEven (Recursion)', () => {
+  describe('Function isEven (Recursion)', () => {
     test('Should work on positive whole numbers', () => {
       expect(isEven(1)).toBe(false);
       expect(isEven(2)).toBe(true);
     });
-    xtest('Extension: Should work on any integer', () => {
+    test('Extension: Should work on any integer', () => {
       expect(isEven(-1)).toBe(false);
       expect(isEven(-2)).toBe(true);
     });
   });
-  xdescribe('Bean Counting', () => {
+  describe('Bean Counting', () => {
     describe('Function countBs', () => {
       test('Should work for missing Bs', () => {
         expect(countBs('meh')).toBe(0);
@@ -32,7 +32,7 @@ xdescribe('Chapter 3 Tests', () => {
         expect(countBs('BbBbB')).toBe(3);
       });
     });
-    xdescribe('Function countChar', () => {
+    describe('Function countChar', () => {
       test('Should work for non-present characters', () => {
         expect(countChar('team', 'I')).toBe(0);
       });

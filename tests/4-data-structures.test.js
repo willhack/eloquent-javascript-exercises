@@ -7,7 +7,7 @@ let list;
 let listB;
 let listC;
 
-xdescribe('Chapter 4 Tests', () => {
+describe('Chapter 4 Tests', () => {
   describe('Array functions', () => {
     beforeEach(() => { arr = [1, 2, 3, 4, 5]; });
 
