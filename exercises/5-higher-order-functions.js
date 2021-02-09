@@ -1,5 +1,4 @@
 // CHAPTER 5: HIGHER-ORDER FUNCTIONS
-const { SCRIPTS } = require('../assets/scripts');
 const { characterScript, countBy } = require('../assets/05_higher_order');
 
 // FLATTENING
@@ -52,14 +51,13 @@ function everySome(arr, func) {
  * @param {string} str - The string of text to check a dominant writing direction for
  * @returns {string}
  * Write a function that computes the dominant writing direction in a string of text.
- * Remember that each script object has a direction property that can be "ltr" (left to right),
- * "rtl" (right to left), or "ttb" (top to bottom). The dominant direction is the direction of
- * a majority of the characters that have a script associated with them. The characterSet and
+ * Remember that each script object has a direction property that can be 'ltr' (left to right),
+ * 'rtl' (right to left), or 'ttb' (top to bottom). The dominant direction is the direction of
+ * a majority of the characters that have a script associated with them. The characterScript and
  * countBy functions defined earlier in the chapter are probably useful here.
  *
- * Note: if you look at lines 2 and 3 of this file you can see that both functions,
- * as well as the 'scripts' array of script objects are being imported for you.
- * Feel free to use them directly in your solution.
+ * Note: if you look at line 2 of this file you can see that both functions are
+ * being imported for you. Feel free to use them directly in your solution.
  */
 function dominantDirection(str) {
 

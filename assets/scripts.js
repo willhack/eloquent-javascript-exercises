@@ -1,6 +1,6 @@
 // Generated from the Unicode 10 database and https://en.wikipedia.org/wiki/Script_(Unicode)
 
-const SCRIPTS = [
+exports.array = [
   {
     name: 'Adlam',
     ranges: [[125184, 125259], [125264, 125274], [125278, 125280]],
@@ -1115,5 +1115,3 @@ const SCRIPTS = [
     link: 'https://en.wikipedia.org/wiki/Mongolian_writing_systems#Horizontal_square_script',
   },
 ];
-
-module.exports = SCRIPTS;
