@@ -8,9 +8,7 @@ const { characterScript, countBy } = require('../assets/05_higher_order');
  * Use the reduce method in combination with the concat method to "flatten" an
  * array of arrays into a single array that has all the elements of the original arrays.
  */
-function flatten(arrs) {
-
-}
+const flatten = (arrs) => arrs.reduce((acc, cur) => acc.concat(cur));
 
 // YOUR OWN LOOP
 /**
@@ -26,7 +24,9 @@ function flatten(arrs) {
  * When defining the function, you can use a regular loop to do the actual looping.
  */
 function loop(value, test, body, update) {
-
+  for (value; test(value); value = update(value)) {
+    body(value);
+  }
 }
 
 // EVERYTHING
@@ -39,12 +39,13 @@ function loop(value, test, body, update) {
  * in the array. Write two versions, one using a loop and one using the `some` method.
  */
 function everyLoop(arr, func) {
-
+  for (let i = 0; i < arr.length; i++) {
+    if (!func(arr[i])) return false;
+  }
+  return true;
 }
 
-function everySome(arr, func) {
-
-}
+const everySome = (arr, func) => !arr.some((e) => !func(e));
 
 // DOMINANT WRITING DIRECTION
 /**
@@ -60,7 +61,13 @@ function everySome(arr, func) {
  * being imported for you. Feel free to use them directly in your solution.
  */
 function dominantDirection(str) {
-
+  const scripts = countBy(str, (char) => {
+    const script = characterScript(char.codePointAt(0));
+    return script ? script.direction : 'none';
+  }).filter(({ direction }) => direction !== 'none');
+  return scripts
+    .reduce((a, b) => ((a.count > b.count) ? a : b))
+    .name;
 }
 
 module.exports = {

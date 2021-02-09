@@ -2,8 +2,8 @@ const {
   flatten, loop, everyLoop, everySome, dominantDirection,
 } = require('../exercises/5-higher-order-functions');
 
-xdescribe('Chapter 5 Tests', () => {
-  xdescribe('Function flatten', () => {
+describe('Chapter 5 Tests', () => {
+  describe('Function flatten', () => {
     test('Should return an array', () => {
       expect(Array.isArray(flatten([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))).toBe(true);
     });
@@ -18,14 +18,14 @@ xdescribe('Chapter 5 Tests', () => {
       expect(concatSpy).toHaveBeenCalled();
     });
   });
-  xdescribe('Function loop', () => {
+  describe('Function loop', () => {
     test('Should work like a traditional for loop', () => {
       let testVal = 0;
       loop(0, (val) => val < 10, () => testVal++, (val) => val + 1);
       expect(testVal).toBe(10);
     });
   });
-  xdescribe('Function everyLoop', () => {
+  describe('Function everyLoop', () => {
     const cb = (n) => n % 2 === 0;
     test('Should work for passing cases', () => {
       const valid = [2, 4, 6];
@@ -41,7 +41,7 @@ xdescribe('Chapter 5 Tests', () => {
       expect(spy).not.toHaveBeenCalled();
     });
   });
-  xdescribe('Function everySome', () => {
+  describe('Function everySome', () => {
     const cb = (n) => n % 2 === 0;
     const spy = jest.spyOn(Array.prototype, 'some');
     beforeEach(() => {
@@ -60,7 +60,7 @@ xdescribe('Chapter 5 Tests', () => {
       expect(spy.mock.calls.length).toBe(1);
     });
   });
-  xdescribe('Function dominantDirection', () => {
+  describe('Function dominantDirection', () => {
     test('Should work ltr dominant characters', () => {
       expect(dominantDirection('Japanese: 新世紀エヴァンゲリオン')).toBe('ltr');
     });
