@@ -8,6 +8,7 @@
   "extends": ["eslint:recommended", "airbnb-base"],
   "parserOptions": { "sourceType": "module" },
   "rules": {
+    "max-classes-per-file": "off",
     "no-unused-vars": ["off", { "vars": "local" }],
     "no-plusplus":"off",
     "no-console":"off",
